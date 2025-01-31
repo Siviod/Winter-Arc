@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "udemy real 2.sln"
+    "dotnet.defaultSolution": "Winter-Arc.sln"
 }
