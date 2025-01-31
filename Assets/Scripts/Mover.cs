@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Mover : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float rotateSpeed = 10f;
     void Start()
     {
         
-
     }
     void Update()
     {
@@ -14,10 +15,12 @@ public class Mover : MonoBehaviour
         unity alrdy knows that, gang. so we use strings as in "" quotes n fuck nut
         by multiplying our moves with time we aint bound toframes but we bound to time typeshit*/
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        float yValue = 0f;
         float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        float xRotate = Input.GetAxis("Fire1") * Time.deltaTime * rotateSpeed;
+        float yRotate = -xRotate;
 
-        transform.Translate (xValue, yValue, zValue);
+        transform.Translate (xValue, 0f, zValue);
+        transform.Rotate (0f, xRotate, yRotate);
     }
     
 }
