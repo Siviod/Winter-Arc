@@ -5,12 +5,12 @@ using UnityEngine.InputSystem.Interactions;
 
 public class Scorer : MonoBehaviour
 {
-    int hits = 0;
+    private int hits = 1;
     private void OnCollisionEnter(Collision other) 
     {
         if (other.gameObject.GetComponent<ObjectHit>() != null && other.gameObject.tag != "Hit")
         {
-            Debug.Log("You've hit your wife " + hits +" many times");
+            Debug.Log("You've hit your wife " + hits + " times");
             hits++;
         }
     }

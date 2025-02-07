@@ -5,24 +5,24 @@ using UnityEngine.InputSystem.Controls;
 public class Jump : MonoBehaviour
 {
     private Rigidbody rb;
-    public float jumpForce = 10f;
+    private float jumpForce = 10f;
     private bool isGrounded = true;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); // ✅ Get Rigidbody (3D)
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) // ✅ Jump only if on ground
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // ✅ Apply upward force
-            isGrounded = false; // ✅ Prevent double jump
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false; 
         }
     }
 
-    void OnCollisionEnter(Collision collision) // ✅ Detect ground contact
+    void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
     }
