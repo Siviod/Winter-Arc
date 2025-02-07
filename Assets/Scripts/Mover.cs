@@ -11,17 +11,16 @@ public class Mover : MonoBehaviour
         PrintInstruction();
         
     }
-    void Update()
-    {
-        MovePlayer();
-        RotatePlayer();
-        
-    }
      void PrintInstruction()
     {
         Debug.Log("Go outside and drink beer!");
         Debug.Log("Go outside and drink beer!");
         Debug.Log("Go outside and drink beer!");
+    }
+    void Update()
+    {
+        MovePlayer();
+        RotatePlayer();
     }
     void MovePlayer()
     {
